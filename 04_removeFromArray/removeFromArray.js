@@ -1,11 +1,8 @@
 const removeFromArray = function (array, ...theArgs) {
-	do {
-		let elemToRemove = theArgs.shift();
-		let indexToRemove = array.indexOf(elemToRemove);
-		if (indexToRemove !== -1) {
-			array.splice(indexToRemove, 1);
-		}
-	} while (theArgs.length !== 0);
+	for (let i = 0; i < theArgs.length; i++) {
+		let arg = theArgs[i];
+		array = array.filter((elem) => elem !== arg);
+	}
 
 	return array;
 };
